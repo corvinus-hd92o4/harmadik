@@ -1,4 +1,4 @@
-package hu.corvinus.harmadik;
+package hu.corvinus.harmadik.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

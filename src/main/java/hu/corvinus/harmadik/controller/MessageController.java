@@ -1,5 +1,6 @@
-package hu.corvinus.harmadik;
+package hu.corvinus.harmadik.controller;
 
+import hu.corvinus.harmadik.controller.dto.SimpleResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
