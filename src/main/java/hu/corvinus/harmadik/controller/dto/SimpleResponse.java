@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class SimpleResponse {
-    String content;
+   private String content;
 }
