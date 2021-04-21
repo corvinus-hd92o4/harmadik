@@ -8,26 +8,21 @@ import org.springframework.web.bind.annotation.*;
 public class MessageController {
 
     @GetMapping("")
-    public SimpleResponse greeting(@RequestParam(required = false) String name){
-        String response;
+    public SimpleResponse greeting(@RequestParam(defaultValue = "Felhasznalo") String name){
 
-        if(name != null){
-            response = String.format("Hello %s", name);
-        }
-        else {
-            response = "Hello Felhasznalo";
-        }
-        return SimpleResponse.builder().content(response).build();
+        String response = String.format("Hello %s", name);
+        return SimpleResponse.builder()
+                .content(response)
+                .build();
     }
 
     @PostMapping("/megfordit")
-    public SimpleResponse reverseMessage(@RequestParam(required = false) String message){
-        String response = "Alma a fa alatt";
-        if (message != null){
-            response = message;
-        }
-        response = new StringBuffer(response).reverse().toString();
-        return SimpleResponse.builder().content(response).build();
+    public SimpleResponse reverseMessage(@RequestParam(defaultValue = "Alma a fa alatt") String text){
+
+        String response = new StringBuffer(text).reverse().toString();
+        return SimpleResponse.builder()
+                .content(response)
+                .build();
     }
 
 
