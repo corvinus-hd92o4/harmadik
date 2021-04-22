@@ -16,7 +16,7 @@ public class MessageController {
                 .build();
     }
 
-    @PostMapping("/megfordit")
+    @PostMapping("")
     public SimpleResponse reverseMessage(@RequestParam(defaultValue = "Alma a fa alatt") String text){
 
         String response = new StringBuffer(text).reverse().toString();
