@@ -17,7 +17,11 @@ public class MessageController {
     }
 
     @PostMapping("")
-    public SimpleResponse reverseMessage(@RequestParam(defaultValue = "Alma a fa alatt") String text){
+    public SimpleResponse reverseMessage(@RequestBody(required = false) String text){
+
+        if(text == null){
+            text="Alma a fa alatt";
+        }
 
         String response = new StringBuffer(text).reverse().toString();
         return SimpleResponse.builder()
